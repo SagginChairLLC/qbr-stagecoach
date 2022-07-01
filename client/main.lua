@@ -159,9 +159,9 @@ RegisterNetEvent('qbr-stagecoach:Client:RentVehicle', function(model)
     SetVehicleOnGroundProperly(spawn_coach)
     SetModelAsNoLongerNeeded(model)
     
-    local player = PlayerPedId()
+  --  local player = PlayerPedId()
 
-    DoScreenFadeOut(500)
+ --[[   DoScreenFadeOut(500)
 
     cam_a = CreateCam("DEFAULT_SCRIPTED_CAMERA", 1)
             SetCamCoord(cam_a,  Config.Cams[zone_name]["cam_a"].x, Config.Cams[zone_name]["cam_a"].y, Config.Cams[zone_name]["cam_a"].z)  
@@ -172,7 +172,7 @@ RegisterNetEvent('qbr-stagecoach:Client:RentVehicle', function(model)
             SetCamRot(cam_b, 0.0, 0.0, Config.Cams[zone_name]["cam_b"].h,  true)
 
     Wait(500)
-    SetPedIntoVehicle(player, spawn_coach, -1)
+    -- SetPedIntoVehicle(player, spawn_coach, -1)
     Wait(500)
     DoScreenFadeIn(500)
 
@@ -182,6 +182,7 @@ RegisterNetEvent('qbr-stagecoach:Client:RentVehicle', function(model)
     Wait(3000)
 
     EndStageCoachCam()
+    ]]
     driving = true
     TriggerServerEvent("qbr-stagecoach:StartCoachJobServer", zone_name, spawn_coach, driving)
 
